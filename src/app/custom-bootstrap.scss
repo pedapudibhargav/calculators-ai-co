@@ -1,0 +1,55 @@
+// Import Bootstrap's functions and variables first
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Override Bootstrap variables to match Webflow's design
+$secondary: #6b7280; // Neutral gray for secondary color
+$body-bg: #ffffff; // White background
+$body-color: #111827; // Dark gray text
+$link-color: #4f46e5; // Purple links
+$link-hover-color: #4338ca; // Darker purple for hover links
+$border-color: #e5e7eb; // Light gray borders
+$btn-primary-bg: #4f46e5; // Purple buttons
+$btn-primary-border-color: #4f46e5;
+$btn-primary-hover-bg: #4338ca; // Darker purple for hover
+$btn-primary-hover-border-color: #4338ca;
+
+// Typography
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 1rem; // Base font size
+$line-height-base: 1.6; // Line height for better readability
+
+// Spacing
+$spacer: 1rem; // Base spacing unit
+
+// Import Bootstrap's rest of the components
+
+$theme-colors: (
+  "primary": #4f46e5
+);
+
+// Additional customizations for Webflow-like look
+.navbar {
+  background-color: #ffffff; // White navbar
+  border-bottom: 1px solid #e5e7eb; // Light gray border
+}
+
+.nav-link {
+  color: #111827; // Dark gray links
+  &:hover {
+    color: #4f46e5; // Purple for hover
+  }
+}
+
+.card {
+  border: 1px solid #e5e7eb; // Light gray border
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow
+}
+
+.footer {
+  background-color: #111827; // Dark gray footer
+  color: #ffffff; // White text
+  padding: 2rem;
+  text-align: center;
+}
