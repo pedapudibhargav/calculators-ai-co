@@ -26,6 +26,25 @@ const MortgageCalculator = () => {
   // State for result
   const [monthlyPayment, setMonthlyPayment] = useState(1288.37);
   const [monthlyPaymentChartData, setMonthlyPaymentChartData] = useState([{"label":"Principal & Interest","value":1288.3718952291354}]);
+  const [principalAndInterestGraphData, setPrincipalAndInterestGraphData] = useState(0);
+
+  const getPrincAndInterestGraphData = () => {
+    const principal = parseFloat(purchasePrice) - parseFloat(downPayment);
+    const monthlyInterest = parseFloat(interestRate) / 100 / 12;
+    const numberOfPayments = parseFloat(loanTerm) * 12;
+
+    if (principal <= 0 || !monthlyInterest || !numberOfPayments) {
+      setPrincipalAndInterestGraphData(null);
+      return;
+    }
+
+    // Calculate principal and interest (P&I)
+    const piPayment = (principal * monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)) /
+      (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+
+    setPrincipalAndInterestGraphData(piPayment);
+    return piPayment;
+  }
 
   const calculatePayment = () => {
     const principal = parseFloat(purchasePrice) - parseFloat(downPayment);
@@ -62,6 +81,7 @@ const MortgageCalculator = () => {
     ];
     setMonthlyPaymentChartData(chartData);
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
