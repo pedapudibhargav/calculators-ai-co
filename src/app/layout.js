@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from 'next/link';
 import { Container, Nav, Navbar, NavbarBrand, NavLink } from 'react-bootstrap';
-import "./globals.css";
+import "./globals.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
